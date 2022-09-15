@@ -8,3 +8,26 @@
   height: 100px;
 }
 
+#lbl-broj-indeksa{
+  margin-top: 50px;
+  margin-left: 250px;
+}
+
+#inp-br-ind{
+  margin-top: 58px;
+  margin-left: 20px;
+  height: 40px;
+  width: 300px;
+}
+
+.brind-div{
+  display: flex;
+  margin-top: -20px;
+}
+
+#btn-prijavi-se{
+  margin-top: 25px;
+  margin-left: 250px;
+  font-size: 22px;
+  width: 200px;
+}
