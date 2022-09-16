@@ -1,6 +1,16 @@
-import { Link } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 function Sidebar() {
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    function odjava() {
+        localStorage.removeItem('sesija')
+        alert('Uspesna odjava sa sistema!')
+        window.location.replace('/')
+    }
+
     return (
         <div>
             <div className="container-fluid">
@@ -14,12 +24,15 @@ function Sidebar() {
                             <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                                 id="menu">
                                 <li className="nav-item">
-                                    <a href="#" className="nav-link align-middle px-0">
+                                    <a className="nav-link align-middle px-0">
                                         <i className="fs-4 bi-house"></i> <span className="ms-1 d-none d-sm-inline display-6 text-white">Obaveštenja</span>
                                     </a>
                                 </li>
 
                             </ul>
+
+
+                            <button className='btn btn-light' onClick={odjava} id='odjava-btn'>ODJAVA</button>
 
                         </div>
                     </div>

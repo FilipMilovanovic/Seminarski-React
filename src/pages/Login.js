@@ -11,6 +11,7 @@ function Login() {
     })
     const navigate = useNavigate();
 
+
     function saveBrojIndeksa(e) {
         setLogin({ ...login, broj_indeksa: e.target.value })
     }
@@ -25,6 +26,7 @@ function Login() {
 
             if (res.data.rez == 200) {
                 alert("Uspesno ste se prijavili na sistem!")
+                localStorage.setItem('sesija', login.broj_indeksa);
                 navigate("/index", {
                     state: {
                         broj_indeksa: login.broj_indeksa
