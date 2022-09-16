@@ -1,12 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
-import Index from './pages/Index';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
+import Index from './pages/Index';
 
 function App() {
   return (
     <div className="App">
-      <Login />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/index" element={<Index />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

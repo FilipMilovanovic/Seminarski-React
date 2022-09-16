@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'
 
 
 function Login() {
@@ -8,6 +9,7 @@ function Login() {
         broj_indeksa: '',
         password: ''
     })
+    const navigate = useNavigate();
 
     function saveBrojIndeksa(e) {
         setLogin({ ...login, broj_indeksa: e.target.value })
@@ -21,10 +23,13 @@ function Login() {
     function loginFja() {
         axios.post("http://localhost:8000/api/login", login).then(res => {
 
-            console.log(login.broj_indeksa + " " + login.password)
-
             if (res.data.rez == 200) {
                 alert("Uspesno ste se prijavili na sistem!")
+                navigate("/index", {
+                    state: {
+                        broj_indeksa: login.broj_indeksa
+                    },
+                });
             }
             else
                 alert("Molimo pokusajte ponovo!")
@@ -46,7 +51,7 @@ function Login() {
 
             <div className="brind-div">
                 <label id="lbl-broj-indeksa" className="display-6">Lozinka:</label>
-                <input type="text" className="form-control" id="inp-br-ind" onChange={savePassword} value={login.password} />
+                <input type="password" className="form-control" id="inp-br-ind" onChange={savePassword} value={login.password} />
             </div>
 
             <button onClick={loginFja} className="btn btn-secondary" id="btn-prijavi-se">Prijavi se</button>
