@@ -47,6 +47,12 @@
   margin-left: -1px;
 }
 
+
+.nav-item {
+  width: 300px;
+}
+
+
 #pr {
     width: 10px;
 }
@@ -63,4 +69,28 @@
 .tabela-div{
   margin-left: -490px;
   margin-top: 120px;
+}
+
+.polozeni-ispiti-div{
+  display: flex;
+}
+
+#polozeni-h1{
+  margin-top: 30px;
+  margin-left: 120px;
+}
+
+.tabela-polozeni-div{
+  margin-left: -240px;
+  margin-top: 120px;
+}
+
+#prosek {
+  margin-top: 300px;
+  margin-left: -645px;
+}
+
+#zbirespb{
+  margin-top: 300px;
+  margin-left: 100px;
 }

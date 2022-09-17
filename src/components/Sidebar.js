@@ -37,6 +37,12 @@ function Sidebar() {
                                     </Link>
                                 </li>
 
+                                <li className="nav-item">
+                                    <Link to={`/polozeni/${brojIndeksa}`} className="nav-link align-middle px-0">
+                                        <i className="fs-4 bi-house"></i> <span className="ms-1 d-none d-sm-inline display-6 text-white">Položeni ispiti</span>
+                                    </Link>
+                                </li>
+
                             </ul>
 
 
