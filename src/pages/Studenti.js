@@ -52,6 +52,8 @@ function Studenti() {
                             <th>Ime i prezime</th>
                             <th>Broj indeksa</th>
                             <th>Email</th>
+                            <th>Status</th>
+                            <th>Smer</th>
                             <th>Akcije</th>
                         </tr>
                     </thead>
@@ -62,6 +64,8 @@ function Studenti() {
                                     <td>{student.name}</td>
                                     <td>{student.broj_indeksa}</td>
                                     <td>{student.email}</td>
+                                    <td>{student.status}</td>
+                                    <td>{student.smer}</td>
                                     <td>
                                         <Link to={`/izmena/${student.broj_indeksa}`}><button className="btn btn-primary mx-1">Izmeni</button></Link>
                                         <button onClick={() => obrisiStudenta(student.id)} className="btn btn-primary">Obriši</button>

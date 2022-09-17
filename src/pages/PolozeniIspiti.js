@@ -13,7 +13,6 @@ function PolozeniIspiti() {
 
 
     useEffect(() => {
-
         axios.get(`http://localhost:8000/api/polozeniIspitiStudenta/${brojIndeksa}`).then(res => {
             setPolozeniIspiti(res.data.ispiti);
         });
@@ -32,18 +31,27 @@ function PolozeniIspiti() {
     var prosek = Number(zbirOcena / polozeniIspiti.length).toFixed(2);
 
 
-
+    console.log(polozeniIspiti)
 
     return (
         <div className="polozeni-ispiti-div">
+
             <Sidebar />
 
-            <h1 id="polozeni-h1">Položeni ispiti</h1>
 
-            <TabelaPolozeni polozeniIspiti={polozeniIspiti} />
+            {polozeniIspiti != 'Nema ispita' ? (
+                <div className="pispiti-div">
 
-            <h5 id="prosek">Prosečna ocena: {prosek} </h5>
-            <h5 id="zbirespb">Zbir ESPB poena: {zbirESPB} </h5>
+                    <h1 id="polozeni-h1">Položeni ispiti</h1>
+
+                    <TabelaPolozeni polozeniIspiti={polozeniIspiti} />
+
+                    <h5 id="prosek">Prosečna ocena: {prosek} </h5>
+                    <h5 id="zbirespb">Zbir ESPB poena: {zbirESPB} </h5>
+                </div>
+            )
+
+                : <h1 id="nemate-h1">Nemate položene ispite!</h1>}
 
         </div>
     )

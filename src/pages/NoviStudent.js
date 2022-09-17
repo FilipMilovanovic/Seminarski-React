@@ -8,7 +8,9 @@ function NoviStudent() {
         name: '',
         broj_indeksa: '',
         password: '',
-        email: ''
+        email: '',
+        status: '',
+        smer: '',
     })
 
     function updateName(e) {
@@ -27,6 +29,13 @@ function NoviStudent() {
         setStudent({ ...student, password: e.target.value })
     }
 
+    function updateStatus(e) {
+        setStudent({ ...student, status: e.target.value })
+    }
+
+    function updateSmer(e) {
+        setStudent({ ...student, smer: e.target.value })
+    }
 
 
     function sacuvajStudenta() {
@@ -67,6 +76,11 @@ function NoviStudent() {
                 <label>Email: </label>
                 <input type="email" className="form-control mt-2 mb-3" value={student.email} onChange={updateEmail} />
 
+                <label>Status: </label>
+                <input type="text" className="form-control mt-2 mb-3" value={student.status} onChange={updateStatus} />
+
+                <label>Smer: </label>
+                <input type="text" className="form-control mt-2 mb-3" value={student.smer} onChange={updateSmer} />
 
                 <button className="btn btn-primary" onClick={sacuvajStudenta}>Sačuvaj</button>
 

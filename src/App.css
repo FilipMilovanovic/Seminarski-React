@@ -81,22 +81,22 @@
 
 #polozeni-h1{
   margin-top: 30px;
-  margin-left: 120px;
+  margin-left: -400px;
 }
 
 .tabela-polozeni-div{
-  margin-left: -240px;
-  margin-top: 120px;
+  margin-left: -400px;
+  margin-top: 50px;
 }
 
 #prosek {
-  margin-top: 300px;
-  margin-left: -645px;
+  margin-top: 10px;
+  margin-left: -400px;
 }
 
 #zbirespb{
-  margin-top: 300px;
-  margin-left: 100px;
+  margin-top: -31px;
+  margin-left: -170px;
 }
 
 #student-info{
@@ -114,7 +114,7 @@
 }
 
 .studenti-tabela{
-  width: 650px;
+  width: 850px;
   margin-top: 110px;
   margin-left: -117px;
   padding-top: 40px;
@@ -151,4 +151,15 @@
   margin-left: -290px;
   width: 500px;
   font-size: 20px;
+}
+
+#nemate-h1{
+  margin-top: 30px;
+  margin-left: 150px;
+}
+
+.pispiti-div {
+
+  margin-left: 500px;
+
 }
