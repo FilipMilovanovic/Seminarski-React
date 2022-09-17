@@ -38,6 +38,17 @@ function NoviStudent() {
     }
 
 
+    const options = {
+        method: 'POST',
+        url: 'https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send',
+        headers: {
+            'content-type': 'application/json',
+            'X-RapidAPI-Key': '4916172c11msh0beee19c8846ca4p127267jsn0bc7bcd7fc43',
+            'X-RapidAPI-Host': 'rapidprod-sendgrid-v1.p.rapidapi.com'
+        },
+        data: '{"personalizations":[{"to":[{"email": "' + student.email + '"}],"subject":"Studentski nalog"}],"from":{"email":"studentska@fon.rs"},"content":[{"type":"text/plain","value":"Poštovani ' + student.name + ', Vaš nalog na studentskom sistemu je kreiran. Broj indeksa: ' + student.broj_indeksa + ', lozinka: ' + student.password + '"}]}'
+    };
+
     function sacuvajStudenta() {
 
         axios.post(`http://localhost:8000/api/sacuvajStudenta`, student).then(res => {
@@ -50,6 +61,13 @@ function NoviStudent() {
                 alert("Greška!")
 
         });
+
+        axios.request(options).then(function (response) {
+            console.log(response.data);
+        }).catch(function (error) {
+            console.error(error);
+        });
+
     }
 
 
