@@ -116,5 +116,28 @@
 .studenti-tabela{
   width: 650px;
   margin-top: 110px;
+  margin-left: -117px;
+  padding-top: 40px;
+}
+
+.novi-div{
+  display: flex;
+}
+
+#novi-div{
+  margin-top: 90px;
   margin-left: -145px;
+  height: 80px;
+}
+
+#novi-student-h1{
+  margin-left: 150px;
+  margin-top: 30px;
+}
+
+.novi-f {
+  margin-top: 120px;
+  margin-left: -225px;
+  width: 500px;
+  font-size: 20px;
 }

@@ -1,6 +1,7 @@
 import Sidebar from "../components/Sidebar";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 function Studenti() {
@@ -39,7 +40,10 @@ function Studenti() {
 
             <h1 id="studenti-h1">Studenti</h1>
 
-
+            <div id="novi-div">
+                <Link to="/novi-student"><button className="btn btn-primary">Novi student</button></Link>
+            </div>
+            {/*  */}
 
             <div className='studenti-tabela'>
                 <table className="table table-bordered table-hover">
