@@ -42,6 +42,10 @@
   margin-left: 300px;
 }
 
+#side {
+  background-color: #0a78da;
+}
+
 .sidebar-div {
   width: 350px;
   margin-left: -1px;
@@ -93,4 +97,24 @@
 #zbirespb{
   margin-top: 300px;
   margin-left: 100px;
+}
+
+#student-info{
+  width: 300px;
+  margin-bottom: 15px;
+}
+
+.studenti-div {
+  display: flex;
+}
+
+#studenti-h1{
+  margin-left: 150px;
+  margin-top: 30px;
+}
+
+.studenti-tabela{
+  width: 650px;
+  margin-top: 110px;
+  margin-left: -145px;
 }
