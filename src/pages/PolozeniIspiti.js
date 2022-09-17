@@ -10,6 +10,7 @@ function PolozeniIspiti() {
     const [polozeniIspiti, setPolozeniIspiti] = useState([])
     const params = new useParams();
     const brojIndeksa = params.broj_indeksa;
+    const [sort, setSort] = useState('desc')
 
 
     useEffect(() => {
@@ -18,6 +19,19 @@ function PolozeniIspiti() {
         });
 
     }, []);
+
+
+    function sortiranje() {
+        axios.get(`http://localhost:8000/api/sortiranje/${brojIndeksa}/${sort}`).then(res => {
+            setPolozeniIspiti(res.data.ispiti);
+        });
+
+        if (sort == 'desc')
+            setSort('asc')
+        else
+            setSort('desc')
+    }
+
 
 
     var zbirOcena = 0;
@@ -44,7 +58,7 @@ function PolozeniIspiti() {
 
                     <h1 id="polozeni-h1">Položeni ispiti</h1>
 
-                    <TabelaPolozeni polozeniIspiti={polozeniIspiti} />
+                    <TabelaPolozeni polozeniIspiti={polozeniIspiti} sortiranje={sortiranje} />
 
                     <h5 id="prosek">Prosečna ocena: {prosek} </h5>
                     <h5 id="zbirespb">Zbir ESPB poena: {zbirESPB} </h5>

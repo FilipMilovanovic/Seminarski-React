@@ -1,9 +1,7 @@
-
-
 function TabelaPolozeni(props) {
 
+    const polozeniIspiti = props.polozeniIspiti;
 
-    const polozeniIspiti = props.polozeniIspiti
 
     return (
         <div>
@@ -13,7 +11,7 @@ function TabelaPolozeni(props) {
                     <thead>
                         <tr>
                             <th>Naziv</th>
-                            <th>Ocena</th>
+                            <th onClick={props.sortiranje}>Ocena</th>
                             <th>ESPB</th>
                             <th>Tip</th>
                             <th>Semestar</th>
