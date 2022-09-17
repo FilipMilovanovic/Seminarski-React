@@ -52,7 +52,7 @@ function Studenti() {
                             <th>Ime i prezime</th>
                             <th>Broj indeksa</th>
                             <th>Email</th>
-                            <th></th>
+                            <th>Akcije</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -62,7 +62,10 @@ function Studenti() {
                                     <td>{student.name}</td>
                                     <td>{student.broj_indeksa}</td>
                                     <td>{student.email}</td>
-                                    <td><button onClick={() => obrisiStudenta(student.id)} className="btn btn-primary">Obriši</button></td>
+                                    <td>
+                                        <Link to={`/izmena/${student.broj_indeksa}`}><button className="btn btn-primary mx-1">Izmeni</button></Link>
+                                        <button onClick={() => obrisiStudenta(student.id)} className="btn btn-primary">Obriši</button>
+                                    </td>
                                 </tr>
                             );
                         })}
@@ -73,7 +76,7 @@ function Studenti() {
             </div>
 
 
-        </div>
+        </div >
     )
 }
 

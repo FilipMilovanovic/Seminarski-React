@@ -6,6 +6,7 @@ import PrijavaIspita from './pages/PrijavaIspita';
 import PolozeniIspiti from './pages/PolozeniIspiti';
 import Studenti from './pages/Studenti';
 import NoviStudent from './pages/NoviStudent';
+import IzmenaStudenta from './pages/IzmenaStudenta';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/polozeni/:broj_indeksa" element={<PolozeniIspiti />} />
           <Route path="/studenti" element={<Studenti />} />
           <Route path="/novi-student" element={<NoviStudent />} />
+          <Route path="/izmena/:broj_indeksa" element={<IzmenaStudenta />} />
         </Routes>
       </Router>
     </div>

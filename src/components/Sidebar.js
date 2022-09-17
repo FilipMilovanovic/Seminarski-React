@@ -15,8 +15,6 @@ function Sidebar() {
 
     }, []);
 
-    if (student != undefined)
-        console.log(student.broj_indeksa)
 
 
     function odjava() {
@@ -24,6 +22,7 @@ function Sidebar() {
         alert('Uspesna odjava sa sistema!')
         window.location.replace('/')
     }
+
 
     return (
         <div className="sidebar-div">
