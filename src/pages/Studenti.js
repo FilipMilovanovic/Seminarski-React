@@ -33,6 +33,7 @@ function Studenti() {
 
 
 
+
     return (
         <div className="studenti-div">
 
@@ -43,41 +44,46 @@ function Studenti() {
             <div id="novi-div">
                 <Link to="/novi-student"><button className="btn btn-primary">Novi student</button></Link>
             </div>
-            {/*  */}
-
-            <div className='studenti-tabela'>
-                <table className="table table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th>Ime i prezime</th>
-                            <th>Broj indeksa</th>
-                            <th>Email</th>
-                            <th>Status</th>
-                            <th>Smer</th>
-                            <th>Akcije</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {sviStudenti.map(student => {
-                            return (
-                                <tr key={student.id}>
-                                    <td>{student.name}</td>
-                                    <td>{student.broj_indeksa}</td>
-                                    <td>{student.email}</td>
-                                    <td>{student.status}</td>
-                                    <td>{student.smer}</td>
-                                    <td>
-                                        <Link to={`/izmena/${student.broj_indeksa}`}><button className="btn btn-primary mx-1">Izmeni</button></Link>
-                                        <button onClick={() => obrisiStudenta(student.id)} className="btn btn-primary">Obriši</button>
-                                    </td>
-                                </tr>
-                            );
-                        })}
-                    </tbody>
-                </table>
 
 
-            </div>
+            {sviStudenti.length > 0 ?
+                <div className='studenti-tabela'>
+                    <table className="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Ime i prezime</th>
+                                <th>Broj indeksa</th>
+                                <th>Email</th>
+                                <th>Status</th>
+                                <th>Smer</th>
+                                <th>Akcije</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {sviStudenti.map(student => {
+                                return (
+                                    <tr key={student.id}>
+                                        <td>{student.name}</td>
+                                        <td>{student.broj_indeksa}</td>
+                                        <td>{student.email}</td>
+                                        <td>{student.status}</td>
+                                        <td>{student.smer}</td>
+                                        <td>
+                                            <Link to={`/izmena/${student.broj_indeksa}`}><button className="btn btn-primary mx-1">Izmeni</button></Link>
+                                            <button onClick={() => obrisiStudenta(student.id)} className="btn btn-primary">Obriši</button>
+                                        </td>
+                                    </tr>
+                                );
+                            })}
+                        </tbody>
+                    </table>
+                </div>
+
+                : ''
+            }
+
+
+
 
 
         </div >

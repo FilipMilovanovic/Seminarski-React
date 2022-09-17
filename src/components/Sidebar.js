@@ -37,9 +37,9 @@ function Sidebar() {
                             <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                                 id="menu">
                                 <li className="nav-item">
-                                    <a className="nav-link align-middle px-0">
+                                    <Link to={`/index`} className="nav-link align-middle px-0">
                                         <i className="fs-4 bi-house"></i> <span className="ms-1 d-none d-sm-inline display-6 text-white">Obaveštenja</span>
-                                    </a>
+                                    </Link>
                                 </li>
 
                                 {brojIndeksa != 'admin' ?

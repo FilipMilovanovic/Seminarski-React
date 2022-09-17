@@ -163,3 +163,23 @@
   margin-left: 500px;
 
 }
+
+
+.index-div{
+  display: flex;
+}
+
+#index-h1{
+  margin-top: 30px;
+  margin-left: 150px;
+}
+
+#txt-ob{
+  margin-top: 120px;
+  margin-left: -70px;
+}
+
+#dtm {
+  margin-top: 90px;
+  margin-left: -325px;
+}

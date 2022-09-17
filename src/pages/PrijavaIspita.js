@@ -9,8 +9,6 @@ function PrijavaIspita() {
     const params = new useParams();
     const brojIndeksa = params.broj_indeksa;
 
-    const [sviIspiti, setSviIspiti] = useState([]);
-    const [polozeniIspiti, setPolozeniIspiti] = useState([]);
     const [ispitiZaPrijavu, setIspitiZaPrijavu] = useState([]);
 
 
@@ -34,7 +32,10 @@ function PrijavaIspita() {
 
             <h1 id='ispiti-pri-h1'>Ispiti koje mogu da prijavim</h1>
 
-            <TabelaPrijavi ispitiZaPrijavu={ispitiZaPrijavu} />
+            {ispitiZaPrijavu.length > 0 ?
+                <TabelaPrijavi ispitiZaPrijavu={ispitiZaPrijavu} />
+                : ''
+            }
 
         </div>
     )

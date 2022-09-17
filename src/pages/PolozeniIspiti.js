@@ -53,7 +53,7 @@ function PolozeniIspiti() {
             <Sidebar />
 
 
-            {polozeniIspiti != 'Nema ispita' ? (
+            {polozeniIspiti.length > 0 ? (
                 <div className="pispiti-div">
 
                     <h1 id="polozeni-h1">Položeni ispiti</h1>
