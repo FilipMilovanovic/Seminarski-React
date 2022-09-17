@@ -37,3 +37,30 @@
   margin-bottom: 40px;
   font-size: 20px;
 }
+
+#ns {
+  margin-left: 300px;
+}
+
+.sidebar-div {
+  width: 350px;
+  margin-left: -1px;
+}
+
+#pr {
+    width: 10px;
+}
+
+.prijava-ispita-div {
+  display: flex;
+}
+
+#ispiti-pri-h1{
+  margin-top: 30px;
+  margin-left: 100px;
+}
+
+.tabela-div{
+  margin-left: -490px;
+  margin-top: 120px;
+}

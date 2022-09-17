@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Index from './pages/Index';
+import PrijavaIspita from './pages/PrijavaIspita';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/index" element={<Index />} />
+          <Route path="/prijava/:broj_indeksa" element={<PrijavaIspita />} />
         </Routes>
       </Router>
     </div>
