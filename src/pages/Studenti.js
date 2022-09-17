@@ -16,7 +16,21 @@ function Studenti() {
     }, []);
 
 
-    console.log(sviStudenti)
+    function obrisiStudenta(id) {
+
+        axios.delete(`http://localhost:8000/api/obrisiStudenta/${id}`).then(res => {
+
+            if (res.data.rez == 200) {
+                alert("Student je obrisan!")
+                window.location.replace('/studenti')
+            }
+            else
+                alert("Greška!")
+
+        });
+    }
+
+
 
     return (
         <div className="studenti-div">
@@ -26,6 +40,7 @@ function Studenti() {
             <h1 id="studenti-h1">Studenti</h1>
 
 
+
             <div className='studenti-tabela'>
                 <table className="table table-bordered table-hover">
                     <thead>
@@ -33,6 +48,7 @@ function Studenti() {
                             <th>Ime i prezime</th>
                             <th>Broj indeksa</th>
                             <th>Email</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,6 +58,7 @@ function Studenti() {
                                     <td>{student.name}</td>
                                     <td>{student.broj_indeksa}</td>
                                     <td>{student.email}</td>
+                                    <td><button onClick={() => obrisiStudenta(student.id)} className="btn btn-primary">Obriši</button></td>
                                 </tr>
                             );
                         })}
