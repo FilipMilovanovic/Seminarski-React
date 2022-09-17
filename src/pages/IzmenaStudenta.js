@@ -44,6 +44,23 @@ function IzmenaStudenta() {
 
 
 
+    function sacuvajIzmene() {
+
+        axios.post(`http://localhost:8000/api/sacuvajIzmene/${brojIndeksa}`, student).then(res => {
+
+            if (res.data.rez == 200) {
+                alert("Student je izmenjen!")
+                window.location.replace('/studenti')
+            }
+            else
+                alert("Greška!")
+
+        });
+
+    }
+
+
+
     return (
         <div className="izm-div">
 
@@ -67,7 +84,7 @@ function IzmenaStudenta() {
                 <input type="email" className="form-control mt-2 mb-3" value={student.email} onChange={updateEmail} />
 
 
-                <button className="btn btn-primary">Sačuvaj</button>
+                <button className="btn btn-primary" onClick={sacuvajIzmene}>Sačuvaj</button>
 
             </div>
 
