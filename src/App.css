@@ -116,7 +116,7 @@
 .studenti-tabela{
   width: 850px;
   margin-top: 110px;
-  margin-left: -117px;
+  margin-left: -575px;
   padding-top: 40px;
 }
 
@@ -182,4 +182,18 @@
 #dtm {
   margin-top: 90px;
   margin-left: -325px;
+}
+
+#pretraga {
+  width: 300px;
+  height: 40px;
+  margin-top: 88px;
+  margin-left: 50px;
+}
+
+#pretraga-b{
+  font-size: 18px;
+  height: 40px;
+  margin-top: 88px;
+  margin-left: 20px;  
 }

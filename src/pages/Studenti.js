@@ -7,6 +7,13 @@ import { Link } from 'react-router-dom';
 function Studenti() {
 
     const [sviStudenti, setSviStudenti] = useState([]);
+    const [pretragaPolje, setPretragaPolje] = useState('');
+
+    function updatePretragaPolje(e) {
+        setPretragaPolje(e.target.value)
+    }
+
+
 
     useEffect(() => {
 
@@ -32,6 +39,13 @@ function Studenti() {
     }
 
 
+    function pretragaStudenata() {
+        axios.get(`http://localhost:8000/api/pretragaStudenata/${pretragaPolje}`).then(res => {
+            setSviStudenti(res.data.studenti);
+        });
+    }
+
+
 
 
     return (
@@ -41,9 +55,17 @@ function Studenti() {
 
             <h1 id="studenti-h1">Studenti</h1>
 
+
+
             <div id="novi-div">
                 <Link to="/novi-student"><button className="btn btn-primary">Novi student</button></Link>
             </div>
+
+            <input type="text" className="form-control" id="pretraga" value={pretragaPolje} onChange={updatePretragaPolje} />
+            <button onClick={pretragaStudenata} className="btn btn-primary" id="pretraga-b">Pretraži</button>
+
+
+
 
 
             {sviStudenti.length > 0 ?
